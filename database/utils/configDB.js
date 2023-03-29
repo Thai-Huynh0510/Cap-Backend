@@ -1,6 +1,6 @@
-const dbName = 'ems-backend';
+const dbName = 'Cap-Backend';
 const dbUser = 'postgres';
-const dbPwd = 'password';
+const dbPwd = 'ht2077';
 
 module.exports = {
     dbName,

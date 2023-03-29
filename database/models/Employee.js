@@ -9,7 +9,7 @@ const Employee = db.define("employee",{
 
     last_name: {
         type: Sequelize.STRING,
-        allowNull: False
+        allowNull: false
     }, 
 
     department: {

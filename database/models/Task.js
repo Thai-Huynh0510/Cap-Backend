@@ -15,7 +15,15 @@ const Task = db.define("task", {
 
   completion_status: {
     type: Sequelize.STRING,
+  },
+
+  comments:{
+    type: Sequelize.STRING,
+  },
+  action:{
+    type: Sequelize.STRING,
   }
+
 
 });
 

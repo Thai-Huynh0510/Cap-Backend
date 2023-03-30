@@ -16,13 +16,16 @@ const seedDB = async () => {
 	const dummyTask = await Task.create({
 		description: "Build space rocket",
         priority_level: "Low",
-		completion_status: "Not Completed"
+		completion_status: "Not Completed",
+		comments: "We lit"
 	});
 
 	const dummyTask1 = await Task.create({
 		description: "Fire John",
         priority_level: "Low",
-		completion_status: "Not Completed"
+		completion_status: "Not Completed",
+		comments: "IDK WHAT I'M DOING",
+		action: "Getting Shit done!!"
 	});
 
 	await dummyTask.setEmployee(dummyEmployee);

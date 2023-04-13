@@ -18,7 +18,7 @@ router.get('/', ash(async (req, res) => {
 
 //** get order by id **//
 router.get('/:id', ash(async (req, res) => {
-  let task = await Task.findByPk(req.params.id);
+  let order = await Order.findByPk(req.params.id);
   res.status(200).json(order);
 }));
 

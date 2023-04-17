@@ -24,7 +24,7 @@ router.get('/:id', ash(async (req, res) => {
 
 //** add new order **/
 router.post('/', function(req,res,next){
-  Task.create(req.body)
+  Order.create(req.body)
   .then(createdOrder => res.status(200).json(createdOrder)).catch(err=>next(err));
 });
 
@@ -37,7 +37,7 @@ router.put('/:id', ash(async (req, res) => {
   res.status(201).json(orders);
 }));
 
-//** delete task **//
+//** delete order **//
 router.delete('/:id',function(req,res,next) {
   Order.destroy({
     where: {

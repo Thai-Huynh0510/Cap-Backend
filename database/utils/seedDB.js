@@ -40,7 +40,7 @@ const seedDB = async () => {
 	});
 	const dummyOrder = await Order.create({
 		detail: "Cool looking rocket",
-		request: "- Low cost \r\n - Cool Looking \r\n - Security \r\n",
+		request: "- Low cost \r\n- Cool Looking \r\n- Security \r\n",
 		customer: "NASA",
 		order_due_date: "2023/05/30"	
 	})

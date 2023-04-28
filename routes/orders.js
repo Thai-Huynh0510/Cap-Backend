@@ -18,7 +18,7 @@ router.get('/', ash(async (req, res) => {
 
 //** get order by id **//
 router.get('/:id', ash(async (req, res) => {
-  let order = await Order.findByPk(req.params.id);
+  let order = await Order.findByPk(req.params.id, { include: [Task] });
   res.status(200).json(order);
 }));
 
@@ -33,7 +33,7 @@ router.put('/:id', ash(async (req, res) => {
   await Order.update(req.body, {
       where: { id: req.params.id }
   });
-  let orders = await Order.findByPk(req.params.id);
+  let orders = await Order.findByPk(req.params.id, { include: [Task] });
   res.status(201).json(orders);
 }));
 

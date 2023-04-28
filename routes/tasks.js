@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Task, Employee } = require('../database/models');
+const { Task, Employee, Order } = require('../database/models');
 
 // helper function so we don't need to wrap our
 // handler functions in try-catch blocks;
@@ -19,7 +19,7 @@ router.get('/', ash(async (req, res) => {
 
 //** get task by id **//
 router.get('/:id', ash(async (req, res) => {
-  let task = await Task.findByPk(req.params.id, { include: [Employee] });
+  let task = await Task.findByPk(req.params.id, { include: [{model: Employee},{model: Order},]});
   res.status(200).json(task);
 }));
 

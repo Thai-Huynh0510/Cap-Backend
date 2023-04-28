@@ -6,7 +6,7 @@ const Order = require('./Order')
 Task.belongsTo(Employee);
 Employee.hasMany(Task);
 Order.belongsTo(Task);
-Task.hasOne(Order)
+Task.hasMany(Order);
 module.exports = {
   Task,
   Employee,

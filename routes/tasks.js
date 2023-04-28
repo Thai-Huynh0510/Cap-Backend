@@ -16,7 +16,14 @@ router.get('/', ash(async (req, res) => {
   let tasks = await Task.findAll();
   res.status(200).json(tasks);
 }));
-
+router.get('/:taskId/orders', ash(async (req, res) => {
+  let orders = await Order.findAll({
+    where: {
+      taskId: req.params.taskId
+    }
+  });
+  res.status(200).json(orders);
+}));
 //** get task by id **//
 router.get('/:id', ash(async (req, res) => {
   let task = await Task.findByPk(req.params.id, { include: [{model: Employee},{model: Order},]});

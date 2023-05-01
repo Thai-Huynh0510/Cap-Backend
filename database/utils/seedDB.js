@@ -1,4 +1,4 @@
-const { Employee, Task, Order } = require('../models');
+const { Employee, Task, Order, Admin } = require('../models');
 
 const seedDB = async () => {
 	const dummyEmployee = await Employee.create({
@@ -54,7 +54,7 @@ const seedDB = async () => {
 	const dummyAdmin = await Admin.create({
 		username: "Pabs1213",
 		password: "Gibby115!"	
-	})
+	});
 
 	await dummyTask.setEmployee(dummyEmployee);
 	await dummyTask1.setEmployee(dummyEmployee1);

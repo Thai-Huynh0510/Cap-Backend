@@ -1,4 +1,4 @@
-const { Employee, Task, Order, Calendar } = require('../models');
+const { Employee, Task, Order, Event } = require('../models');
 
 const seedDB = async () => {
 	const dummyEmployee = await Employee.create({
@@ -50,9 +50,15 @@ const seedDB = async () => {
 		customer: "StarBucks",
 		order_due_date: "2023/07/25"	
 	})
-	const dummyEvent = await Calendar.create({
+	const dummyEvent = await Event.create({
 		title: "task1",
-		end_date: "2023/05/10"
+		start_date: "2023/05/04",
+		end_date: "2023/05/17",
+	})
+	const dummyEvent1 = await Event.create({
+		title: "task2",
+		start_date: "2023/05/15",
+		end_date: "2023/05/20",
 	})
 	await dummyTask.setEmployee(dummyEmployee);
 	await dummyTask1.setEmployee(dummyEmployee1);
@@ -60,6 +66,7 @@ const seedDB = async () => {
 	await dummyTask.addOrder(dummyOrder);
 	await dummyTask2.addOrder(dummyOrder2);
 	await dummyEvent;
+	await dummyEvent1;
 }
 
 module.exports = seedDB;

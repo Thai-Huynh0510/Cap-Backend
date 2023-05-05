@@ -3,7 +3,7 @@
 const Task = require('./Task');
 const Employee = require('./Employee');
 const Order = require('./Order');
-const Calendar = require('./Calendar');
+const Event = require('./Event');
 Task.belongsTo(Employee);
 Employee.hasMany(Task);
 Order.belongsTo(Task);
@@ -12,5 +12,5 @@ module.exports = {
   Task,
   Employee,
   Order,
-  Calendar
+  Event
 };

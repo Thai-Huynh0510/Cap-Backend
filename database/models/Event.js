@@ -1,14 +1,17 @@
 const Sequelize = require('sequelize');
 const db = require('../db'); 
 
-const Calendar = db.define("Calendar", {
+const Event = db.define("event", {
     title: {
         type: Sequelize.STRING,
         allowNull: false
+    },
+    start_date:{
+        type: Sequelize.DATE,
     },
     end_date:{
         type: Sequelize.DATE
     }
 });
 
-module.exports = Calendar;
+module.exports = Event;

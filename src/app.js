@@ -1,9 +1,9 @@
 // Import database setup utils
-const createDB = require('./database/utils/createDB');
-const seedDB = require('./database/utils/seedDB');
+const createDB = require('../database/utils/createDB');
+const seedDB = require('../database/utils/seedDB');
 
 // Import Sequelize instance
-const db = require('./database');
+const db = require('../database');
 
 // Sync and seed
 const syncDatabase = async () => {
@@ -29,7 +29,7 @@ const express = require("express");
 const app = express();
 
 // Express router: import routes we defined
-const apiRouter = require('./routes');
+const apiRouter = require('../routes');
 
 // Initialize express server
 const cors = require('cors')

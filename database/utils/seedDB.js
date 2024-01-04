@@ -62,8 +62,8 @@ const seedDB = async () => {
     });
 	const dummyTask2 = await Task.create({
         description: "Build an app for Starbucks",
-        completion_status: "Completed",
-        due_date: "2023/05/08",
+        completion_status: "Not Completed",
+        due_date: "2023/05/10",
         comments: "Customer needs it ASAP",
     }); 
     const dummyTask3 = await Task.create({
@@ -91,18 +91,13 @@ const seedDB = async () => {
         due_date: "2023/07/25",
         comments: "Software upgrades, Security upgrades",
     });
-	const dummyTask7 = await Task.create({
-        description: "Meeting with Head of CUNY",
-        completion_status: "Not Completed",
-        due_date: "2023/07/28",
-        comments: "Updates on the project",
-    });
 	const dummyTask8 = await Task.create({
         description: "Chairman's Signature",
         completion_status: "Not Completed",
         due_date: "2023/07/28",
         comments: "Project approval",
     });
+
    
 
 	const dummyOrder = await Order.create({
@@ -140,12 +135,7 @@ const seedDB = async () => {
 	})
 
 
-	const dummyOrder5 = await Order.create({
-		detail: "CUNY new website and app ",
-		request: "- Easier UI, \r\n -Design improvements \r\n -Software updates",
-		customer: "CUNY",
-		order_due_date:"2023/08/28"
-	})
+	
 
 	const dummyEvent = await Event.create({
 		title: "task1",
@@ -155,7 +145,7 @@ const seedDB = async () => {
 	const dummyEvent1 = await Event.create({
 		title: "task2",
 		start_date: "2021/05/05",
-		end_date: "2023/05/05",
+		end_date: "2023/05/11",
 	})
 
 	const dummyEvent2 = await Event.create({
@@ -188,11 +178,6 @@ const seedDB = async () => {
 		end_date: "2023/07/25",
 	})
 
-	const dummyEvent7 = await Event.create({
-		title: "task8",
-		start_date: "2023/07/24",
-		end_date: "2023/07/28",
-	})
 
 	const dummyEvent8 = await Event.create({
 		title: "task9",
@@ -206,23 +191,22 @@ const seedDB = async () => {
 	// set tasks to employees 
 	
 	await dummyTask.setEmployee(dummyEmployee);
-	await dummyTask1.setEmployee(dummyEmployee);
+	await dummyTask1.setEmployee(dummyEmployee1);
 	await dummyTask2.setEmployee(dummyEmployee2);
 	await dummyTask3.setEmployee(dummyEmployee3);
 	await dummyTask4.setEmployee(dummyEmployee4);
 	await dummyTask5.setEmployee(dummyEmployee5);
 	await dummyTask6.setEmployee(dummyEmployee6);
-	await dummyTask7.setEmployee(dummyEmployee6);
 	await dummyTask8.setEmployee(dummyEmployee7);
 	
 
 //set orders on order's page 
 	await dummyTask.addOrder(dummyOrder);
-	await dummyTask1.addOrder(dummyOrder1);
-	await dummyTask2.addOrder(dummyOrder2);
-	await dummyTask3.addOrder(dummyOrder3);
-	await dummyTask4.addOrder(dummyOrder4);
-	await dummyTask5.addOrder(dummyOrder5); 
+	await dummyTask2.addOrder(dummyOrder1);
+	await dummyTask3.addOrder(dummyOrder2);
+	await dummyTask5.addOrder(dummyOrder3);
+	await dummyTask6.addOrder(dummyOrder4);
+	
 
 //set calander with tasks. 
 	await dummyEvent;
@@ -232,7 +216,6 @@ const seedDB = async () => {
 	await dummyEvent4;
 	await dummyEvent5;
 	await dummyEvent6;
-	await dummyEvent7;
 	await dummyEvent8;
 }
 

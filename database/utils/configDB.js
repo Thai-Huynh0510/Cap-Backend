@@ -1,6 +1,6 @@
 const dbName = 'Cap-Backend';
 const dbUser = 'postgres';
-const dbPwd = 'Nattayatorn!1';
+const dbPwd = 'ht2077';
 
 module.exports = {
     dbName,
